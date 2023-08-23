@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "lambda-1"
+name = "lambda-2"
 version = "0.1.0"
 description = ""
 authors = ["Neil Ferreira <root@neilf.net>"]
 
 [tool.poetry.dependencies]
 python = "3.11.0"
-pydicom = "2.4.2"
+pydicom = "2.4.0"
 
 
 [tool.poetry.group.shared.dependencies]

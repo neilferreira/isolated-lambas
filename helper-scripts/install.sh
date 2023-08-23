@@ -13,6 +13,7 @@ find . -type d -name "tests" | while IFS= read -r lambda; do
     echo "Adding shared requirements to $(dirname $lambda)"
     poetry add --group shared $(cat ../../shared-requirements.txt)
 
+    echo "AAdding pytest to the development dependencies"
     poetry add --group dev pytest-cov
 
     echo "Calling poetry install to $(dirname $lambda)"
