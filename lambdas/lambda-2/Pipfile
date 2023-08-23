@@ -4,7 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-lambda-1 = {editable = true, path = "."}
+lambda-2 = {editable = true, path = "."}
 
 [dev-packages]
 

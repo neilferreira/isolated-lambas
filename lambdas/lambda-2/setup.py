@@ -9,7 +9,7 @@ for requirements_file in ["src/requirements.txt", "../../shared-requirements.txt
             dependencies.append(dependency)
 
 setup(
-    name="lambda-1",
+    name="lambda-2",
     packages=find_packages("src"),
     package_dir={"": "src"},
     install_requires=dependencies,
