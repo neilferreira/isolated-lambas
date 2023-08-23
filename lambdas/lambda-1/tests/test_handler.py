@@ -1,6 +1,6 @@
 def test_handler():
     from handler import handler
-    assert handler().items() >= {"success": True}
+    assert handler(event={}).items() >= {"success": True}.items()
 
 
 def test_version_pin():
