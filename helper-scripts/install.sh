@@ -3,14 +3,21 @@
 # Die on any errors
 set -e
 
-pip3 install pipenv==2023.5.19
+pip3 install -U poetry
 
 #
 # Install the package dependencies using pipenv
 find . -type d -name "tests" | while IFS= read -r lambda; do
     cd $(dirname $lambda)
-    echo "Running pipenv install -e . in $(dirname $lambda)"
-    pipenv install -e .
+
+    echo "Adding shared requirements to $(dirname $lambda)"
+    poetry add --group shared $(cat ../../shared-requirements.txt)
+
+    echo "AAdding pytest to the development dependencies"
+    poetry add --group dev pytest-cov
+
+    echo "Calling poetry install to $(dirname $lambda)"
+    poetry install
 
     echo "Done with $lambda"
 
